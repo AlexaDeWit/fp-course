@@ -263,8 +263,11 @@ find ::
   (a -> Bool)
   -> List a
   -> Optional a
-find =
-  error "todo: Course.List#find"
+find p (h :. t)
+  | p h       = Full h
+  | otherwise = find p t
+
+find _ Nil = Empty
 
 -- | Determine if the length of the given list is greater than 4.
 --
