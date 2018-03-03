@@ -70,8 +70,9 @@ instance Applicative List where
     List (a -> b)
     -> List a
     -> List b
-  (<*>) =
-    error "todo: Course.Apply (<*>)#instance List"
+  (<*>) Nil _ = Nil
+  (<*>) _ Nil = Nil
+  (<*>) (f :. fs) as = (f <$> as) ++ (fs <*> as)
 
 -- | Insert into an Optional.
 --
