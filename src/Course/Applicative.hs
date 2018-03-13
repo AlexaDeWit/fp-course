@@ -186,8 +186,7 @@ lift3 ::
   -> f b
   -> f c
   -> f d
-lift3 =
-  error "todo: Course.Applicative#lift3"
+lift3 f fa fb fc = pure f <*> fa <*> fb <*> fc
 
 -- | Apply a quaternary function in the environment.
 -- /can be written using `lift3` and `(<*>)`./
@@ -220,8 +219,7 @@ lift4 ::
   -> f c
   -> f d
   -> f e
-lift4 =
-  error "todo: Course.Applicative#lift4"
+lift4 f fa fb fc fd = pure f <*> fa <*> fb <*> fc <*> fd
 
 -- | Apply a nullary function in the environment.
 lift0 ::
