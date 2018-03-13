@@ -295,8 +295,7 @@ lift1 f fa = pure f <*> fa
   f b
   -> f a
   -> f b
-(<*) =
-  error "todo: Course.Applicative#(<*)"
+(<*) fb fa = lift2 (\b _ -> b) fb fa
 
 -- | Sequences a list of structures to a structure of list.
 --
